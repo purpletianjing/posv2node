@@ -35,7 +35,6 @@ describe("Cart",function() {
       var scan = new Scanner();
       var result = scan.changeForm();
       var cart = new Cart();
-      //var cartItem = new()
       cart.add(result);
       var pos = new Pos();
       expect(pos.concatReceiptString(cart)).toBe(expectText);
