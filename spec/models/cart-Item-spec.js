@@ -2,7 +2,7 @@ var CartItem = require('../../models/cart-item.js');
 
 describe("CartItem",function() {
   describe("constructor",function() {
-    it("accept name",function() {
+    it("accept barcode and count",function() {
       var cartItem = new CartItem('ITEM000001',3);
       cartItem.getItemInfo();
       expect(cartItem._itemInfo.name).toBe('雪碧');
