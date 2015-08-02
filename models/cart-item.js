@@ -1,13 +1,27 @@
-var allItems = require("./fixtures-allItems.js");
-var promotionRule = require("./fixture-promotion.js");
+
+var promotionRule = function loadPromotions(promotion) {
+  return promotion;
+};
 
 //var allItems = loadAllItems();
 
 function CartItem(barcode, count) {
   this.barcode = barcode;
   this.count = count;
+
   //this._itemInfo = null;
 }
+
+var promotionRule = [];
+var allItems = [];
+
+CartItem.setPromotions = function(promotionsArr) {
+  promotionRule = promotionsArr;
+};
+
+CartItem.setAllItems = function(itemArr) {
+  allItems = itemArr;
+};
 
 CartItem.prototype.getItemInfo = function() {
   var itemInfo = {};

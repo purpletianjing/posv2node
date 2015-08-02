@@ -1,23 +1,20 @@
 var DateTime = require("../../models/date.js");
 
-dateDigitToString = function(num) {
-  return num < 10 ? '0' + num : num;
+var date = {
+  'year': 1,
+  'month': 1,
+  'day': 1,
+  'hour': 1,
+  'minute': 1,
+  'second': 1
 };
 
-var currentDate = new Date(),
-  year = dateDigitToString(currentDate.getFullYear()),
-  month = dateDigitToString(currentDate.getMonth() + 1),
-  date = dateDigitToString(currentDate.getDate()),
-  hour = dateDigitToString(currentDate.getHours()),
-  minute = dateDigitToString(currentDate.getMinutes()),
-  second = dateDigitToString(currentDate.getSeconds()),
-  formattedDateString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
+var formattedDateString = '01' + '年' + '01' + '月' + '01' + '日 ' + '01' + ':' + '01' + ':' + '01';
 
-describe("Cart",function() {
-  describe("constructor",function() {
-    it("accept name",function() {
-
-      expect(DateTime['getFormattedDate']()).toBe(formattedDateString);
+describe("Cart", function() {
+  describe("constructor", function() {
+    it("accept name", function() {
+      expect(DateTime['getFormattedDate'](date)).toBe(formattedDateString);
     });
   });
 });
