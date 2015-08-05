@@ -1,7 +1,6 @@
 {
   "name": "posv2node",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "jasmine": "^2.3.1"
@@ -14,5 +13,14 @@
     "testem": "testem"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purpletianjing/posv2node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/purpletianjing/posv2node/issues"
+  },
+  "homepage": "https://github.com/purpletianjing/posv2node#readme",
+  "description": ""
 }

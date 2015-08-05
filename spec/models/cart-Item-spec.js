@@ -2,9 +2,13 @@ var Item = require('../../models/item.js');
 var Promotion = require('../../models/promotion.js');
 var CartItem = require('../../models/cart-item.js');
 
-
+var itemArr = [];
+var promotionsArr = [];
+var cartItem;
 describe("CartItem", function() {
-    var itemArr = [
+
+  beforeEach(function(){
+    itemArr = [
       new Item('ITEM000000', '可口可乐', '瓶', 3.00),
       new Item('ITEM000001', '雪碧', '瓶', 3.00),
       new Item('ITEM000002', '苹果', '斤', 5.50),
@@ -12,21 +16,23 @@ describe("CartItem", function() {
       new Item('ITEM000004', '电池', '个', 2.00),
       new Item('ITEM000005', '方便面', '袋', 4.50)
     ];
-    var promotionsArr = [
+    promotionsArr = [
       new Promotion('BUY_TWO_GET_ONE_FREE', [
         'ITEM000000',
         'ITEM000001',
         'ITEM000005'
       ])
     ];
+    cartItem = new CartItem('ITEM000001', 3);
     CartItem.setAllItems(itemArr);
     CartItem.setPromotions(promotionsArr);
-    cartItem = new CartItem('ITEM000001', 3);
-
-
 
   //cartItem = new CartItem('ITEM000001',3);
   cartItem.getItemInfo();
+  });
+
+
+
   describe("constructor", function() {
     it("accept barcode and count", function() {
       expect(cartItem.barcode).toBe('ITEM000001');
